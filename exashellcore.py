@@ -20,6 +20,8 @@ Write.Print("[] Loading ExaShell ...", Colors.red_to_purple, interval=0.040)
 time.sleep(2)
 os.system('cls')
 Write.Print("[] Enter help to see all commands of ExaShell ! \n", Colors.yellow_to_red, interval=0.040)
+Write.Print("[] Enter clear to clear all output of the console ! \n", Colors.yellow_to_red, interval=0.040)
+
 
 while True:
     base = Write.Input("[] root@ExaShell -> ", Colors.yellow_to_red, interval=0.040)
@@ -30,7 +32,9 @@ while True:
         Write.Print('[->] exaspeed (launch tool for speed test) | SOON\n', Colors.purple_to_red, interval=0.040)
         Write.Print('[->] exanetconfig (show informations about network) | SOON\n', Colors.purple_to_red, interval=0.040)
         Write.Print('[->] exapart (launch tool for partitioning) | SOON\n', Colors.purple_to_red, interval=0.040)
-        Write.Print('╰──────────><──────────╯\n', Colors.purple_to_red, interval=0.040)
+        Write.Print('[->] exit (exit ExaShell)\n', Colors.purple_to_red, interval=0.040)
+        Write.Print('[->] clear (clear all the console output !)\n', Colors.purple_to_red, interval=0.040)
+        Write.Print('╰─────────><────────╯\n', Colors.purple_to_red, interval=0.040)
 
     if base == "exainfo":
         uname = platform.uname()
@@ -40,7 +44,7 @@ while True:
         Write.Print(f'[->] OS Version : {uname.version}\n', Colors.purple_to_red, interval=0.040)
         Write.Print(f'[->] CPU : {uname.processor}\n', Colors.purple_to_red, interval=0.040)
         Write.Print(f'[->] CPU Architecture : {uname.machine}\n', Colors.purple_to_red, interval=0.040)
-        Write.Print('╰──────────><──────────╯\n', Colors.purple_to_red, interval=0.040)
+        Write.Print('╰───────────><─────────╯\n', Colors.purple_to_red, interval=0.040)
     
     if base == "exaspeed":
         Write.Print('╭───────>ExaSpeed<──────╮\n', Colors.purple_to_red, interval=0.040)
@@ -53,4 +57,12 @@ while True:
     if base == "exapart":
         Write.Print('╭───────>ExaPart<──────╮\n', Colors.purple_to_red, interval=0.040)
         Write.Print('COMING SOON\n', Colors.purple_to_red, interval=0.040)
+
+    if base == "clear":
+        os.system('cls')
+
+    if base == "exit":
+        Write.Print('Exiting...', Colors.purple_to_red, interval=0.040)
+        time.sleep(1)
+        os.kill()
 
