@@ -7,6 +7,8 @@ import psutil
 
 from pystyle import Write, Colors
 
+VERSION = "1.0"
+
 Write.Print("[] Loading ExaShell ...", Colors.red_to_purple, interval=0.040)
 time.sleep(2)
 os.system('cls')
