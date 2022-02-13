@@ -10,7 +10,8 @@ from pystyle import Write, Colors
 
 VERSION = "1.1"
 
-lastestVersion = requests.get("https://api.github.com/repos/xYanis/ExaShell/releases/latest").json["tag_url"]
+req = requests.get("https://api.github.com/repos/xYanis/ExaShell/releases/latest").json()
+lastestVersion = req['tag_name']
 
 if VERSION != lastestVersion:
     print(f"[] You are not on the latest version (v{lastestVersion}) !")
