@@ -8,7 +8,7 @@ import psutil
 
 from pystyle import Write, Colors
 
-VERSION = "1.0"
+VERSION = "1.1"
 
 lastestVersion = requests.get("https://api.github.com/repos/xYanis/ExaShell/releases/latest").json["tag_url"]
 
