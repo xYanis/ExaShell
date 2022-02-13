@@ -1,6 +1,7 @@
 from platform import platform
 import time
 import os
+import requests
 import platform
 import subprocess
 import psutil
@@ -8,6 +9,11 @@ import psutil
 from pystyle import Write, Colors
 
 VERSION = "1.0"
+
+lastestVersion = requests.get("https://api.github.com/repos/xYanis/ExaShell/releases/latest").json["tag_url"]
+
+if VERSION != lastestVersion:
+    print(f"[] You are not on the latest version (v{lastestVersion}) !")
 
 Write.Print("[] Loading ExaShell ...", Colors.red_to_purple, interval=0.040)
 time.sleep(2)
